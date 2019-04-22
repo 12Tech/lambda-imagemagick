@@ -8,7 +8,8 @@ RUN curl -O https://imagemagick.org/download/ImageMagick.tar.gz && \
     cd ./ImageMagick-* && \
     ./configure --prefix=/opt/ --enable-shared=no --enable-static=yes && \
     make && make install && \
+    mkdir -p /dist && \
     strip -s /opt/bin/magick /opt/lib/libMagick*.a && \
-    zip -9 -r /imagemagick.zip /opt
+    zip --symlinks -9 -r /imagemagick.zip /opt
 
-ENTRYPOINT [ "cp", "/imagemagick.zip",  "/tmp" ]    
+ENTRYPOINT [ "cp", "/imagemagick.zip",  "/dist" ]
