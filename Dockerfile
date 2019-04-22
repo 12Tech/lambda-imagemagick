@@ -10,3 +10,5 @@ RUN curl -O https://imagemagick.org/download/ImageMagick.tar.gz && \
     make && make install && \
     strip -s /opt/bin/magick /opt/lib/libMagick*.a && \
     zip -9 -r /imagemagick.zip /opt
+
+ENTRYPOINT [ "cp", "/imagemagick.zip",  "/tmp" ]    
