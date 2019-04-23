@@ -1,4 +1,4 @@
-FROM amazonlinux:2017.03
+FROM amazonlinux:2017.03.1.20170812
 RUN yum -y install git \
     python36 \
     python36-pip \
